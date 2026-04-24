@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FODINHA</title>
 <style>
+/* TODO O SEU CSS ORIGINAL AQUI - mantenha exatamente como estava */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
 
 :root {
@@ -36,7 +37,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── PIXEL GRID BG ─── */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -48,11 +48,9 @@ body::before {
   z-index: 0;
 }
 
-/* ─── SCREENS ─── */
 .screen { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
 .screen.hidden { display: none !important; }
 
-/* ─── LOGO ─── */
 .logo {
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(28px, 6vw, 56px);
@@ -74,7 +72,6 @@ body::before {
   margin-bottom: 48px;
 }
 
-/* ─── PANEL ─── */
 .panel {
   background: var(--bg2);
   border: var(--pixel) solid var(--border);
@@ -94,7 +91,6 @@ body::before {
   letter-spacing: 2px;
 }
 
-/* ─── INPUTS ─── */
 .field { margin-bottom: 20px; }
 .field label {
   display: block;
@@ -118,7 +114,6 @@ body::before {
 .field input:focus, .field select:focus { border-color: var(--accent); }
 .field input::placeholder { color: var(--text2); }
 
-/* ─── BUTTONS ─── */
 .btn {
   display: inline-block;
   background: var(--accent);
@@ -144,11 +139,9 @@ body::before {
 .btn.small { font-size: 9px; padding: 10px 16px; width: auto; }
 .btn.disabled { opacity: 0.4; pointer-events: none; }
 
-/* ─── DIVIDER ─── */
 .divider { height: var(--pixel); background: var(--border); margin: 20px 0; }
 .or { text-align: center; color: var(--text2); font-size: 14px; margin: 12px 0; }
 
-/* ─── PLAYERS CONFIG ─── */
 .player-slot {
   display: flex; align-items: center; gap: 12px;
   padding: 10px 12px;
@@ -170,7 +163,6 @@ body::before {
   text-align: right;
 }
 
-/* ─── WAITING ROOM ─── */
 .room-code {
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(20px, 4vw, 32px);
@@ -201,7 +193,6 @@ body::before {
 }
 .player-list li .dot.waiting { background: var(--text2); box-shadow: none; }
 
-/* ─── GAME SCREEN ─── */
 #screen-game {
   padding: 0;
   justify-content: flex-start;
@@ -219,7 +210,6 @@ body::before {
   min-height: 100vh;
 }
 
-/* ─── TOP BAR ─── */
 .top-bar {
   display: flex;
   align-items: center;
@@ -240,7 +230,6 @@ body::before {
   color: var(--text2);
 }
 
-/* ─── PLAYERS ROW ─── */
 .players-row {
   display: flex;
   gap: 8px;
@@ -324,7 +313,6 @@ body::before {
   background: rgba(10,10,15,0.7);
 }
 
-/* ─── TABLE ─── */
 .table-area {
   flex: 1;
   background: var(--bg2);
@@ -361,7 +349,6 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ─── CARDS ─── */
 .card {
   width: var(--card-w);
   height: var(--card-h);
@@ -387,7 +374,6 @@ body::before {
   transform: rotateY(180deg);
 }
 
-/* CARD SVG PIXEL ART */
 .card svg {
   width: 100%;
   height: 100%;
@@ -403,7 +389,6 @@ body::before {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* ─── MY HAND ─── */
 .my-hand-area {
   background: var(--bg2);
   border: var(--pixel) solid var(--border);
@@ -423,7 +408,6 @@ body::before {
   justify-content: center;
 }
 
-/* ─── BET PANEL ─── */
 .bet-panel {
   background: var(--bg2);
   border: var(--pixel) solid var(--accent);
@@ -464,7 +448,6 @@ body::before {
 .bet-btn:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 var(--accent2); }
 .bet-btn.forbidden { opacity: 0.25; pointer-events: none; border-style: dashed; }
 
-/* ─── LOG ─── */
 .log-area {
   background: var(--bg2);
   border: var(--pixel) solid var(--border);
@@ -482,7 +465,6 @@ body::before {
 .log-entry.bad { color: var(--red); }
 .log-entry.good { color: var(--green); }
 
-/* ─── MODAL ─── */
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.85);
@@ -523,7 +505,6 @@ body::before {
   text-shadow: 0 0 20px rgba(85,232,136,0.5);
 }
 
-/* ─── TOAST ─── */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -544,7 +525,6 @@ body::before {
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ─── LIFE LOST ANIMATION ─── */
 @keyframes shakeLose {
   0%,100% { transform: translateX(0); }
   20% { transform: translateX(-6px); }
@@ -561,7 +541,6 @@ body::before {
 }
 .glow-win { animation: glowWin 0.6s ease; }
 
-/* ─── BLIND CARD (testa) ─── */
 .blind-label {
   font-size: 13px;
   color: var(--text2);
@@ -569,7 +548,6 @@ body::before {
   margin-top: 4px;
 }
 
-/* ─── STATUS MESSAGES ─── */
 .status-msg {
   font-family: 'Press Start 2P', monospace;
   font-size: 9px;
@@ -581,7 +559,6 @@ body::before {
 }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
-/* ─── SCORE TABLE ─── */
 .score-table { width: 100%; border-collapse: collapse; font-size: 17px; }
 .score-table th {
   font-family: 'Press Start 2P', monospace;
@@ -595,7 +572,6 @@ body::before {
 .score-table td { padding: 8px 10px; border-bottom: var(--pixel) solid var(--bg3); }
 .score-table tr.eliminated td { opacity: 0.4; text-decoration: line-through; }
 
-/* ─── PLAYER CARD FOREHEAD (blind) ─── */
 .forehead-area {
   display: flex;
   gap: 20px;
@@ -612,7 +588,6 @@ body::before {
   margin-bottom: 6px;
 }
 
-/* ─── MISC ─── */
 .gap { gap: 12px; }
 .flex-row { display: flex; flex-direction: row; }
 .flex-col { display: flex; flex-direction: column; }
@@ -625,7 +600,7 @@ body::before {
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════ SCREEN: MENU ═══ -->
+<!-- TODO O SEU HTML ORIGINAL AQUI - mantenha todos os elementos igual -->
 <div id="screen-menu" class="screen">
   <div class="logo">FODINHA</div>
   <div class="logo-sub">BARALHO ESPANHOL</div>
@@ -668,13 +643,10 @@ body::before {
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ SCREEN: HOST ═══ -->
 <div id="screen-host" class="screen hidden">
   <div class="logo" style="font-size:clamp(18px,3vw,32px)">CRIAR SALA</div>
-
   <div class="panel">
     <div class="panel-title">📡 HOST</div>
-
     <div class="field">
       <label>SEU NOME</label>
       <input type="text" id="host-name" placeholder="JOGADOR 1" maxlength="12">
@@ -688,19 +660,15 @@ body::before {
         <option value="10">10</option>
       </select>
     </div>
-
     <button class="btn green" onclick="hostGame()">CRIAR SALA</button>
     <button class="btn secondary mt-12" onclick="showScreen('screen-menu')">← VOLTAR</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ SCREEN: JOIN ═══ -->
 <div id="screen-join" class="screen hidden">
   <div class="logo" style="font-size:clamp(18px,3vw,32px)">ENTRAR</div>
-
   <div class="panel">
     <div class="panel-title">🔌 CONECTAR</div>
-
     <div class="field">
       <label>SEU NOME</label>
       <input type="text" id="join-name" placeholder="JOGADOR 2" maxlength="12">
@@ -709,79 +677,56 @@ body::before {
       <label>CÓDIGO DA SALA</label>
       <input type="text" id="join-code" placeholder="XXXX" maxlength="6" style="text-transform:uppercase; letter-spacing:6px; font-family:'Press Start 2P',monospace; font-size:18px;">
     </div>
-
     <button class="btn green" onclick="joinGame()">ENTRAR</button>
     <button class="btn secondary mt-12" onclick="showScreen('screen-menu')">← VOLTAR</button>
-
     <div id="join-status" class="status-msg mt-12" style="display:none"></div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ SCREEN: WAITING ═══ -->
 <div id="screen-waiting" class="screen hidden">
   <div class="logo" style="font-size:clamp(18px,3vw,28px)">AGUARDANDO...</div>
-
   <div class="panel">
     <div class="panel-title">🎯 SALA</div>
-
     <div style="text-align:center; color:var(--text2); font-size:16px; margin-bottom:8px">CÓDIGO DA SALA:</div>
     <div class="room-code" id="room-code-display">----</div>
     <div style="text-align:center; color:var(--text2); font-size:14px; margin-bottom:20px">Compartilhe com os jogadores na mesma rede</div>
-
     <ul class="player-list" id="waiting-players"></ul>
-
     <div id="waiting-status" class="status-msg mt-12">AGUARDANDO JOGADORES...</div>
     <button id="btn-start-host" class="btn green mt-12 hidden" onclick="hostStartGame()">▶ INICIAR JOGO</button>
     <button class="btn secondary mt-12" onclick="leaveRoom()">← SAIR</button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ SCREEN: GAME ═══ -->
 <div id="screen-game" class="screen hidden">
   <div class="game-wrap">
-
-    <!-- TOP BAR -->
     <div class="top-bar">
       <div class="round-info" id="round-label">RODADA 1 • 1 CARTA</div>
       <div class="phase-info" id="phase-label">FASE: PALPITES</div>
       <div style="font-size:14px; color:var(--text2)" id="pe-label">PÉ: —</div>
     </div>
-
-    <!-- PLAYERS -->
     <div class="players-row" id="players-row"></div>
-
-    <!-- TABLE -->
     <div class="table-area" id="table-area">
       <div id="table-content">
         <div class="status-msg" id="table-status">DISTRIBUINDO CARTAS...</div>
       </div>
     </div>
-
-    <!-- MY HAND -->
     <div class="my-hand-area" id="my-hand-area">
       <div class="my-hand-label">SUA MÃO</div>
       <div class="my-hand" id="my-hand"></div>
     </div>
-
-    <!-- BET PANEL -->
     <div class="bet-panel" id="bet-panel" style="display:none">
       <div class="bet-title">SEU PALPITE</div>
       <div class="bet-info" id="bet-info">Quantas vazas você vai ganhar?</div>
       <div class="bet-buttons" id="bet-buttons"></div>
     </div>
-
-    <!-- LOG -->
     <div class="log-area" id="log-area"></div>
-
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════ MODAL ═══ -->
 <div id="modal-overlay" class="modal-overlay hidden">
   <div class="modal" id="modal-content"></div>
 </div>
 
-<!-- ═══════════════════════════════════════ TOAST ═══ -->
 <div class="toast" id="toast"></div>
 
 <script>
@@ -829,7 +774,6 @@ function buildCardSVG(value, naipe, blind = false) {
     return `<svg viewBox="0 0 72 108" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
       <rect x="0" y="0" width="72" height="108" fill="#12121a" stroke="#2a2a45" stroke-width="2"/>
       <rect x="4" y="4" width="64" height="100" fill="#1a1a35" stroke="#3a3a65" stroke-width="2"/>
-      <!-- pixel pattern -->
       ${Array.from({length:6},(_,row)=>Array.from({length:4},(_,col)=>`<rect x="${8+col*14}" y="${8+row*16}" width="12" height="12" fill="${(row+col)%2===0?'#2a2a55':'#1e1e40'}"/>`).join('')).join('')}
       <text x="36" y="60" text-anchor="middle" dominant-baseline="middle" fill="#3a3a65" font-size="28" font-family="monospace">?</text>
     </svg>`;
@@ -845,12 +789,9 @@ function buildCardSVG(value, naipe, blind = false) {
   return `<svg viewBox="0 0 72 108" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
     <rect x="0" y="0" width="72" height="108" fill="#c8b89a" stroke="${borderColor}" stroke-width="2"/>
     <rect x="2" y="2" width="68" height="104" fill="${bgColor}" stroke="${borderColor}" stroke-width="1"/>
-    <!-- corner value top-left -->
     <text x="6" y="18" fill="${textColor}" font-size="14" font-family="'Press Start 2P',monospace" font-weight="bold">${label}</text>
     <text x="6" y="30" fill="${textColor}" font-size="10" font-family="monospace">${sym}</text>
-    <!-- center suit -->
     <g transform="translate(0,20)">${suitPixels[naipe]}</g>
-    <!-- corner value bottom-right (rotated) -->
     <g transform="translate(66,90) rotate(180)">
       <text x="0" y="14" fill="${textColor}" font-size="14" font-family="'Press Start 2P',monospace" font-weight="bold">${label}</text>
       <text x="0" y="26" fill="${textColor}" font-size="10" font-family="monospace">${sym}</text>
@@ -876,7 +817,6 @@ const MANILHAS = [
   { value: 1, naipe: 'espadas', rank: 4 },
 ];
 
-// 4 < 5 < 6 < 7 < 10 < 11 < 12 < 1 < 2 < 3
 const CARD_ORDER = [4,5,6,7,10,11,12,1,2,3];
 
 function isManilha(value, naipe) {
@@ -906,7 +846,6 @@ function shuffle(arr) {
   return a;
 }
 
-// ─── GAME STATE ───
 let G = null;
 
 function initGame(players, lives) {
@@ -919,20 +858,20 @@ function initGame(players, lives) {
       isMe: p.isMe,
       eliminated: false,
     })),
-    round: 0,       // 0-indexed
+    round: 0,
     cardsThisRound: 0,
-    peIndex: 0,     // who is the pé
-    phase: 'bet',   // 'bet' | 'play' | 'result'
-    bets: [],       // bet per player
-    wins: [],       // current wins
-    hands: [],      // cards per player
-    currentTurn: 0, // player index whose turn it is
-    table: [],      // played cards this vaza: [{playerIndex, value, naipe}]
-    vazaDone: 0,    // vazas completed this round
+    peIndex: 0,
+    phase: 'bet',
+    bets: [],
+    wins: [],
+    hands: [],
+    currentTurn: 0,
+    table: [],
+    vazaDone: 0,
     totalLives: lives,
-    roundSequence: [1,2,3,4,5], // cycle
+    roundSequence: [1,2,3,4,5],
     roundCycle: 0,
-    blindCard: null, // for round with 1 card
+    blindCard: null,
   };
 }
 
@@ -946,13 +885,11 @@ function cardsForRound(cyclePos) {
 
 function startRound(g) {
   const active = activePlayers(g);
-  if (active.length < 2) return; // game over
+  if (active.length < 2) return;
 
-  // advance cycle
   const cards = cardsForRound(g.roundCycle);
   g.cardsThisRound = cards;
 
-  // deal
   let deck = shuffle(buildDeck());
   g.hands = g.players.map(() => []);
   g.bets = g.players.map(() => null);
@@ -967,7 +904,6 @@ function startRound(g) {
     di += cards;
   }
 
-  // find first bettor (left of pé, clockwise among active)
   const peActiveIdx = active.findIndex(p => p.id === active[g.peIndex % active.length].id);
   const firstBettor = (peActiveIdx + 1) % active.length;
   g.currentTurn = active[firstBettor].id;
@@ -987,7 +923,6 @@ function pePlayerId(g) {
 }
 
 function makeBet(g, playerId, bet) {
-  // validate pé restriction
   const active = activePlayers(g);
   const pid = pePlayerId(g);
   if (playerId === pid) {
@@ -1001,18 +936,17 @@ function makeBet(g, playerId, bet) {
   const pname = g.players[playerId].name;
   log(`${pname} apostou ${bet}`);
 
-  // next bettor
   const orderBet = getBettingOrder(g);
   const myPos = orderBet.indexOf(playerId);
   if (myPos < orderBet.length - 1) {
     g.currentTurn = orderBet[myPos + 1];
   } else {
-    // all bets done, start play
     g.phase = 'play';
-    // first to play: left of pé
-    const peActiveIdx = active.findIndex(p => p.id === pid);
-    const firstPlay = (peActiveIdx + 1) % active.length;
-    g.currentTurn = active[firstPlay].id;
+    const pid2 = pePlayerId(g);
+    const active2 = activePlayers(g);
+    const peIdx = active2.findIndex(p => p.id === pid2);
+    const firstPlay = (peIdx + 1) % active2.length;
+    g.currentTurn = active2[firstPlay].id;
     log('Palpites fechados! Começa a jogada.', 'highlight');
   }
   return true;
@@ -1038,7 +972,6 @@ function playCard(g, playerId, cardIndex) {
   const pname = g.players[playerId].name;
   log(`${pname} jogou ${cardValueLabel(card.value)} de ${card.naipe}`);
 
-  // next player
   const active = activePlayers(g);
   const myIdx = active.findIndex(p => p.id === playerId);
   const nextIdx = (myIdx + 1) % active.length;
@@ -1046,7 +979,6 @@ function playCard(g, playerId, cardIndex) {
   if (g.table.length < active.length) {
     g.currentTurn = active[nextIdx].id;
   } else {
-    // resolve vaza
     resolveVaza(g);
   }
   return true;
@@ -1054,7 +986,6 @@ function playCard(g, playerId, cardIndex) {
 
 function resolveVaza(g) {
   const active = activePlayers(g);
-  // find strongest
   let best = null;
   let bestStr = -1;
   let ties = [];
@@ -1073,7 +1004,6 @@ function resolveVaza(g) {
   g.vazaDone++;
 
   if (ties.length > 1) {
-    // all tied cards annul; find next best among non-tied
     const tiePlayers = ties.map(t => t.playerId);
     const nonTied = g.table.filter(t => !tiePlayers.includes(t.playerId));
     if (nonTied.length > 0) {
@@ -1084,7 +1014,7 @@ function resolveVaza(g) {
       }
       best = best2;
     } else {
-      best = null; // all tied, nobody wins
+      best = null;
     }
   }
 
@@ -1092,18 +1022,17 @@ function resolveVaza(g) {
     g.wins[best.playerId]++;
     const pname = g.players[best.playerId].name;
     log(`✓ Vaza para ${pname}!`, 'good');
-    // next vaza starts with winner
     g.currentTurn = best.playerId;
   } else {
     log('Empate! Vaza anulada.', 'highlight');
-    // stays with same first player of vaza? use pé-left
-    const peIdx = active.findIndex(p => p.id === pePlayerId(g));
-    g.currentTurn = active[(peIdx + 1) % active.length].id;
+    const pid = pePlayerId(g);
+    const active2 = activePlayers(g);
+    const peIdx = active2.findIndex(p => p.id === pid);
+    g.currentTurn = active2[(peIdx + 1) % active2.length].id;
   }
 
   g.table = [];
 
-  // check if round over
   if (g.vazaDone >= g.cardsThisRound) {
     endRound(g);
   }
@@ -1115,7 +1044,6 @@ function endRound(g) {
 
   const toEliminate = [];
   for (const p of activePlayers(g)) {
-    const diff = Math.abs(p.id < g.bets.length ? (g.bets[p.id] ?? 0) : 0 - g.wins[p.id]);
     const betVal = g.bets[p.id] ?? 0;
     const winVal = g.wins[p.id];
     const loss = Math.abs(betVal - winVal);
@@ -1128,7 +1056,6 @@ function endRound(g) {
     if (p.lives <= 0) toEliminate.push(p.id);
   }
 
-  // eliminate AFTER full hand
   for (const pid of toEliminate) {
     const p = g.players[pid];
     if (!p.eliminated) {
@@ -1137,7 +1064,6 @@ function endRound(g) {
     }
   }
 
-  // advance pé
   const active = activePlayers(g);
   if (active.length >= 2) {
     g.peIndex = (g.peIndex + 1) % active.length;
@@ -1145,22 +1071,16 @@ function endRound(g) {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════
-// AI
-// ═══════════════════════════════════════════════════════════════
-
 function aiMakeBet(g, playerId) {
   const hand = g.hands[playerId];
-  // count how many cards are likely to win
   let estimate = 0;
   for (const c of hand) {
     const str = cardStrength(c.value, c.naipe);
-    if (str >= CARD_ORDER.indexOf(12)) estimate++; // strong cards
+    if (str >= CARD_ORDER.indexOf(12)) estimate++;
     else if (isManilha(c.value, c.naipe)) estimate++;
   }
   estimate = Math.min(estimate, hand.length);
 
-  // check pé restriction
   const pid = pePlayerId(g);
   if (playerId === pid) {
     const sum = getBetSum(g);
@@ -1168,15 +1088,13 @@ function aiMakeBet(g, playerId) {
       estimate = estimate === 0 ? 1 : estimate - 1;
       if (sum + estimate === g.cardsThisRound) estimate++;
       estimate = Math.max(0, Math.min(estimate, hand.length));
-      // try all options
       let found = false;
       for (let b = 0; b <= hand.length; b++) {
         if (sum + b !== g.cardsThisRound) { estimate = b; found = true; break; }
       }
-      if (!found) estimate = hand.length + 1; // forced overflow
+      if (!found) estimate = hand.length + 1;
     }
   }
-
   return estimate;
 }
 
@@ -1187,7 +1105,6 @@ function aiChooseCard(g, playerId) {
   const needWins = betVal - winsVal;
 
   if (needWins > 0) {
-    // try to win: play strongest
     let bestIdx = 0, bestStr = -1;
     for (let i = 0; i < hand.length; i++) {
       const s = cardStrength(hand[i].value, hand[i].naipe);
@@ -1195,7 +1112,6 @@ function aiChooseCard(g, playerId) {
     }
     return bestIdx;
   } else {
-    // try to lose: play weakest
     let worstIdx = 0, worstStr = Infinity;
     for (let i = 0; i < hand.length; i++) {
       const s = cardStrength(hand[i].value, hand[i].naipe);
@@ -1234,15 +1150,13 @@ function renderPlayers() {
       (p.isMe ? ' is-me' : '');
     div.id = `pcard-${p.id}`;
 
-    // hearts
-    const totalLives = G.totalLives;
     let hearts = '';
-    for (let i = 0; i < totalLives; i++) {
+    for (let i = 0; i < G.totalLives; i++) {
       hearts += `<div class="heart${i >= p.lives ? ' lost' : ''}"></div>`;
     }
 
     const betDisplay = G.bets[p.id] !== null ? `Apost: ${G.bets[p.id]}` : '';
-    const winsDisplay = G.phase === 'play' || G.phase === 'result' ? `Fez: ${G.wins[p.id]}` : '';
+    const winsDisplay = (G.phase === 'play' || G.phase === 'result') ? `Fez: ${G.wins[p.id]}` : '';
 
     div.innerHTML = `
       <div class="pname">${p.name}</div>
@@ -1267,7 +1181,6 @@ function renderMyHand() {
   const isBlind = G.cardsThisRound === 1 && G.phase === 'bet';
 
   if (isBlind && hand.length > 0) {
-    // show blind card
     const wrap = document.createElement('div');
     wrap.style.textAlign = 'center';
     const cardEl = makeCardEl(hand[0].value, hand[0].naipe, true, '');
@@ -1295,7 +1208,6 @@ function renderTable() {
   area.innerHTML = '';
 
   if (G.cardsThisRound === 1 && G.phase === 'bet') {
-    // show forehead cards
     const title = document.createElement('div');
     title.className = 'status-msg';
     title.textContent = 'RODADA CEGA — CARTAS NA TESTA';
@@ -1312,10 +1224,9 @@ function renderTable() {
       fname.textContent = p.name;
       slot.appendChild(fname);
 
-      // everyone sees everyone else's card (except their own)
       const hand = G.hands[p.id];
       if (hand.length > 0) {
-        const blind = p.isMe; // you don't see your own card
+        const blind = p.isMe;
         const cardEl = makeCardEl(hand[0].value, hand[0].naipe, blind);
         slot.appendChild(cardEl);
       }
@@ -1353,14 +1264,17 @@ function renderTable() {
 function renderBetPanel() {
   const panel = document.getElementById('bet-panel');
   const myPlayer = G.players.find(p => p.isMe);
-  if (!myPlayer || myPlayer.eliminated) { panel.style.display = 'none'; return; }
+  if (!myPlayer || myPlayer.eliminated) { 
+    if(panel) panel.style.display = 'none'; 
+    return; 
+  }
 
   if (G.phase !== 'bet' || G.currentTurn !== myPlayer.id) {
-    panel.style.display = 'none';
+    if(panel) panel.style.display = 'none';
     return;
   }
 
-  panel.style.display = 'block';
+  if(panel) panel.style.display = 'block';
   const infoEl = document.getElementById('bet-info');
   const btnsEl = document.getElementById('bet-buttons');
 
@@ -1368,19 +1282,21 @@ function renderBetPanel() {
   const pid = pePlayerId(G);
   const isPe = myPlayer.id === pid;
 
-  infoEl.textContent = `${G.cardsThisRound} carta${G.cardsThisRound>1?'s'} nesta rodada.${isPe ? ' Você é o pé!' : ''} Soma atual: ${betSum}`;
+  if(infoEl) infoEl.textContent = `${G.cardsThisRound} carta${G.cardsThisRound>1?'s':''} nesta rodada.${isPe ? ' Você é o pé!' : ''} Soma atual: ${betSum}`;
 
-  btnsEl.innerHTML = '';
-  for (let b = 0; b <= G.cardsThisRound; b++) {
-    const forbidden = isPe && (betSum + b === G.cardsThisRound);
-    const btn = document.createElement('button');
-    btn.className = 'bet-btn' + (forbidden ? ' forbidden' : '');
-    btn.textContent = b;
-    btn.title = forbidden ? 'Proibido (fecharia a conta)' : '';
-    if (!forbidden) {
-      btn.addEventListener('click', () => humanMakeBet(b));
+  if(btnsEl) {
+    btnsEl.innerHTML = '';
+    for (let b = 0; b <= G.cardsThisRound; b++) {
+      const forbidden = isPe && (betSum + b === G.cardsThisRound);
+      const btn = document.createElement('button');
+      btn.className = 'bet-btn' + (forbidden ? ' forbidden' : '');
+      btn.textContent = b;
+      btn.title = forbidden ? 'Proibido (fecharia a conta)' : '';
+      if (!forbidden) {
+        btn.addEventListener('click', () => humanMakeBet(b));
+      }
+      btnsEl.appendChild(btn);
     }
-    btnsEl.appendChild(btn);
   }
 }
 
@@ -1424,14 +1340,12 @@ function tick() {
 
   const active = activePlayers(G);
 
-  // check game over
   if (active.length < 2 && G.round > 0) {
     renderAll();
     showGameOver();
     return;
   }
 
-  // if result phase, pause briefly then start next round
   if (G.phase === 'result') {
     renderAll();
     setTimeout(() => {
@@ -1442,7 +1356,6 @@ function tick() {
     return;
   }
 
-  // if current player is AI, act
   const currentPlayer = G.players[G.currentTurn];
   if (currentPlayer && !currentPlayer.eliminated && currentPlayer.isAI) {
     setTimeout(() => {
@@ -1459,7 +1372,6 @@ function tick() {
     return;
   }
 
-  // human turn — just render and wait
   renderAll();
 }
 
@@ -1499,6 +1411,7 @@ function showGameOver() {
 function updatePlayerSlots() {
   const n = parseInt(document.getElementById('cfg-players').value);
   const container = document.getElementById('player-slots');
+  if (!container) return;
   container.innerHTML = '';
   for (let i = 0; i < n; i++) {
     const div = document.createElement('div');
@@ -1525,7 +1438,8 @@ function startLocalGame() {
 
   G = initGame(players, lives);
   logLines = [];
-  document.getElementById('log-area').innerHTML = '';
+  const logArea = document.getElementById('log-area');
+  if (logArea) logArea.innerHTML = '';
   showScreen('screen-game');
   startRound(G);
   renderAll();
@@ -1533,7 +1447,7 @@ function startLocalGame() {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// WEBRTC MULTIPLAYER (simplified peer signaling via shared state)
+// WEBRTC MULTIPLAYER
 // ═══════════════════════════════════════════════════════════════
 
 let peer = null;
@@ -1554,9 +1468,8 @@ function hostGame() {
   myName = (document.getElementById('host-name').value.trim() || 'HOST').toUpperCase();
   hostLives = parseInt(document.getElementById('host-lives').value);
 
-  // Check PeerJS availability
   if (typeof Peer === 'undefined') {
-    showToast('PeerJS não carregado. Verifique sua conexão.');
+    showToast('PeerJS não carregado. Jogue no modo local por enquanto.');
     return;
   }
 
@@ -1566,7 +1479,8 @@ function hostGame() {
   roomPlayers = [{ name: myName, id: 'host', isMe: true }];
 
   peer.on('open', (id) => {
-    document.getElementById('room-code-display').textContent = id;
+    const codeDisplay = document.getElementById('room-code-display');
+    if (codeDisplay) codeDisplay.textContent = id;
     showScreen('screen-waiting');
     updateWaitingList();
   });
@@ -1592,14 +1506,11 @@ function handleHostReceive(conn, data) {
   if (data.type === 'join') {
     roomPlayers.push({ name: data.name, id: conn.peer, isMe: false });
     updateWaitingList();
-    // broadcast updated list
     broadcastToAll({ type: 'room_update', players: roomPlayers });
-    // show start button if 2+
     const btn = document.getElementById('btn-start-host');
-    if (roomPlayers.length >= 2) btn.classList.remove('hidden');
+    if (btn && roomPlayers.length >= 2) btn.classList.remove('hidden');
   }
   if (data.type === 'game_action') {
-    // relay to all
     broadcastToAll({ ...data, fromId: conn.peer });
     handleGameAction(data);
   }
@@ -1625,17 +1536,20 @@ function joinGame() {
   isHost = false;
 
   const statusEl = document.getElementById('join-status');
-  statusEl.style.display = 'block';
-  statusEl.textContent = 'CONECTANDO...';
+  if (statusEl) {
+    statusEl.style.display = 'block';
+    statusEl.textContent = 'CONECTANDO...';
+  }
 
   peer.on('open', () => {
     const conn = peer.connect(code);
     conn.on('open', () => {
       connections.push(conn);
       conn.send({ type: 'join', name: myName });
-      statusEl.textContent = 'CONECTADO! AGUARDANDO SALA...';
+      if (statusEl) statusEl.textContent = 'CONECTADO! AGUARDANDO SALA...';
       showScreen('screen-waiting');
-      document.getElementById('room-code-display').textContent = code;
+      const codeDisplay = document.getElementById('room-code-display');
+      if (codeDisplay) codeDisplay.textContent = code;
       roomPlayers = [{ name: myName, id: peer.id, isMe: true }];
       updateWaitingList();
     });
@@ -1647,7 +1561,7 @@ function joinGame() {
   });
 
   peer.on('error', (err) => {
-    statusEl.textContent = 'ERRO: ' + err.type;
+    if (statusEl) statusEl.textContent = 'ERRO: ' + err.type;
   });
 }
 
@@ -1689,7 +1603,8 @@ function startMultiplayerGame(data) {
   }));
   G = initGame(players, data.lives);
   logLines = [];
-  document.getElementById('log-area').innerHTML = '';
+  const logArea = document.getElementById('log-area');
+  if (logArea) logArea.innerHTML = '';
   showScreen('screen-game');
   startRound(G);
   renderAll();
@@ -1728,23 +1643,28 @@ function leaveRoom() {
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
+  const target = document.getElementById(id);
+  if (target) target.classList.remove('hidden');
 }
 
 function showModal(html) {
   const overlay = document.getElementById('modal-overlay');
   const content = document.getElementById('modal-content');
-  content.innerHTML = html;
-  overlay.classList.remove('hidden');
+  if (overlay && content) {
+    content.innerHTML = html;
+    overlay.classList.remove('hidden');
+  }
 }
 
 function closeModal() {
-  document.getElementById('modal-overlay').classList.add('hidden');
+  const overlay = document.getElementById('modal-overlay');
+  if (overlay) overlay.classList.add('hidden');
 }
 
 let toastTimer = null;
 function showToast(msg) {
   const t = document.getElementById('toast');
+  if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toastTimer);
@@ -1752,17 +1672,33 @@ function showToast(msg) {
 }
 
 // ═══════════════════════════════════════════════════════════════
-// INIT
+// INIT - Garantir que as funções estejam disponíveis no escopo global
 // ═══════════════════════════════════════════════════════════════
 
-// Load PeerJS dynamically
+// Aguarda o DOM carregar completamente
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializa os slots de jogadores
+    updatePlayerSlots();
+    showScreen('screen-menu');
+    
+    // Garantir que as funções globais estão acessíveis para os onclick
+    window.startLocalGame = startLocalGame;
+    window.showScreen = showScreen;
+    window.updatePlayerSlots = updatePlayerSlots;
+    window.hostGame = hostGame;
+    window.joinGame = joinGame;
+    window.hostStartGame = hostStartGame;
+    window.leaveRoom = leaveRoom;
+    window.closeModal = closeModal;
+});
+
+// Carregar PeerJS de forma assíncrona (não bloqueia o jogo local)
 const peerScript = document.createElement('script');
 peerScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.2/peerjs.min.js';
+peerScript.onerror = function() {
+    console.warn('PeerJS não carregou - multiplayer indisponível, mas o modo local funciona');
+};
 document.head.appendChild(peerScript);
-
-// Init player slots
-updatePlayerSlots();
-showScreen('screen-menu');
 </script>
 </body>
 </html>
